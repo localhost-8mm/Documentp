@@ -1,1 +1,40 @@
+Set A : 
+1) Write Ajax program to read a textfile and print the contents of the file 
+when the user clicks on the Print button. 
+ :--------------------------
 
+=====================================================================================================================
+2) Write Ajax program to carry out validation for a username entered in 
+textbox. If the textbox is blank, print ‘Enter username’. If the number 
+of characters is less than three,print’ Username is too short’. If value 
+entered is appropriate the print ‘Valid username’. 
+  :--------------------------
+
+=====================================================================================================================
+Set B : 
+ 
+1) Create employee table as follows 
+EMP(eno, ename, designation, salary). Write Ajax program to select the 
+employees name and print the selected employee’s details. 
+  :--------------------------
+
+=====================================================================================================================
+2) Write Ajax program to print Movie details by selecting an Actor’s name. 
+Create table MOVIE and ACTOR as follows with 1 : M cardinality MOVIE 
+(mno, mname, release_yr) and ACTOR(ano, aname) 
+  :--------------------------
+
+=====================================================================================================================
+Set C : 
+1) Write Ajax program to fetch suggestions when is user is typing in 
+a textbox. (eg like google suggestions. Hint create array of 
+suggestions and matching string will be displayed ) 
+  :--------------------------
+
+=====================================================================================================================
+2) Write Ajax program to get book details from XML file when user 
+select a book name. Create XML file for storing details of 
+book(title, author, year, price).
+ :--------------------------
+
+=====================================================================================================================
