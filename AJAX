@@ -1,1 +1,65 @@
 
+Set A 
+Q:1) Create a login form with a username and password. Once the user logs in, 
+the second form should be displayed to accept user details (name, city, 
+phoneno). If the user doesn’t enter information within a specified time limit, 
+expire his session and give a warning.
+:-----------------------------
+
+
+====================================================================================================================================
+ 
+Q:2) Write a script to keep track of number of times the web page has been 
+accessed. 
+ :-----------------------------
+
+
+====================================================================================================================================
+ 
+ 
+Set B 
+Q:1) Change the preferences of your web page like font style, font size, font color, 
+background color using cookie. Display selected settings on next web page and 
+actual implementation (with new settings) on third web page. 
+ :-----------------------------
+
+
+====================================================================================================================================
+ 
+Q:2) Create a form to accept student information (name, class, address). Once 
+the student information is accepted, accept marks in next form (Phy, Bio, 
+Chem, Maths, Marathi, English) .Display the mark sheet for the student in the 
+next form containing name, class, marks of the subject, total and percentage. 
+ :-----------------------------
+
+
+====================================================================================================================================
+ 
+Set C 
+Q:1) Write a program to create a shopping mall. User must be allowed to do 
+purchase from two pages. Each page should have a page total. The third 
+page should display a bill, which consists of a page total of what ever the 
+purchase has been done and print the total. (Use http session tracking). 
+ :-----------------------------
+
+
+====================================================================================================================================
+ 
+Q:2) Create a form to accept customer information(name, address, ph-no).Once 
+the customer information is accepted, accept product information in the next 
+form(Product name, qty, rate). Display the bill for the customer in the next 
+form. Bill should contain the customer information and the information of the 
+products entered. 
+ :-----------------------------
+
+
+====================================================================================================================================
+ 
+Q:3) Write a PHP script to accept username and password . If in the first three 
+chances, username and password entered is correct, then display second 
+form, otherwise display error message. 
+:-----------------------------
+
+
+====================================================================================================================================
+ 
