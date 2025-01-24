@@ -1,1 +1,40 @@
 
+SET A: 
+1) Write a javascript to display message ‘Good Morning’ using alert box. 
+:-------------------
+
+
+================================================================================================================
+2) Write a javascript to display message ‘Good Afternoon’ using function.(Hint: 
+use Event ‘Onload’). 
+:-------------------
+
+
+================================================================================================================
+SET B: 
+1) Write a javascript function to validate username and password for a membership form. 
+:-------------------
+
+
+================================================================================================================
+2) Using Javascript function, display the string in different formatting styles(Bold, italic, 
+underline, strikethrough, hypertext etc) 
+ :-------------------
+
+
+================================================================================================================
+SET C: 
+1) Write a Javascript to create a FIFO queue . Insert new element in it (Hint: Use 
+concept of Array ) 
+:-------------------
+
+
+================================================================================================================
+2) Write a Javascript program to accept name of student, Change font color to red, 
+font size to 18 if student name is present otherwise on clicking on empty text box 
+display image which change its size (Use onblur, onload, onmousehover, 
+onmouseclick, onmouseup)
+:-------------------
+
+
+================================================================================================================
