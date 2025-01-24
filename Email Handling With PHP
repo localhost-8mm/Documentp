@@ -1,1 +1,29 @@
+SET A : 
+Write a PHP script to accept following details form a user (To, From, Subject, Text) and 
+send email to particular user. 
+ :-------------------------
 
+======================================================================================================================
+Write a PHP script to design a form to sending an email to more than one recipient. 
+:-------------------------
+
+======================================================================================================================
+SET B : 
+Write a PHP script to Validate given email ID. Design necessary screen layouts. 
+ :-------------------------
+
+======================================================================================================================
+Write a PHP script to design a form to compose/write an email with file attachment. 
+:-------------------------
+
+======================================================================================================================
+SET C : 
+Write a PHP project script to design HTML Login form, validate it and compose/write 
+an email with the following details: 
+ To: 
+ From: 
+ Subject: 
+ Message: 
+ 
+Design interactive WebPages in PHP to login, validation, and email sending with file 
+attachment to one or more recipient.
