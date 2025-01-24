@@ -1,1 +1,79 @@
 
+Set A: 
+1) Write a script to create XML file named “Course.xml” <Course> 
+ <Computer Science> 
+ <Student name>.......</Student name> 
+ <Class name>......</Class name> 
+ <percentage>.....</percentage> </Computer 
+Science> 
+</Course> 
+Store the details of 5 students who are in TYBSc. 
+:--------------------------
+
+
+===============================================================================================================
+2) Link “Course.xml” file to the CSS style sheet and get well formatted output 
+as given below 
+
+PropertyName	StudentName	ClassName	       Percentage
+Color        	Blue	      Green	              Red	
+Font-family	 Bodoni MT	Arial, Helvetica,
+                           sans-serif	       Impact, Charcoal, sans-serif	
+Font-style	   Italic	    Normal	          Oblique	
+Fontzize	   16 pts	     12 pts	           14 pts	
+:--------------------------
+
+
+===============================================================================================================
+Set B: 
+1) Write PHP script to generate an XML code in the following format 
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+<CD Store> 
+ <Movie> 
+ <Title>Mr. India</Title> 
+ <Release Year>1987</ Release Year > 
+ </Movie> 
+ <Movie> 
+ <Title>Holiday</Title> 
+ <Release Year>2014</ Release Year > 
+ </Movie> 
+ <Movie> 
+ <Title>LOC</Title> 
+ <Release Year>2003</ Release Year > 
+ </Movie> 
+ </CD Store> 
+ :--------------------------
+
+
+===============================================================================================================
+2) Create a XML file which gives details of movies available in 
+“Mayanagari CD Store” from following categories a)
+Classical b) 
+Action 
+c) Horror 
+Elements in each category are in the following format <Category> 
+ <Movie Name>----</Movie Name> 
+ <Release Year>----</Release Year> </Category> Save 
+the file with name “movies.xml”. 
+:--------------------------
+
+
+===============================================================================================================
+Set C : 
+1) Create an application that reads “book.xml” file into simple XML object. 
+Display attributes and elements (Hint:simple_xml_load_file() function) 
+:--------------------------
+
+
+===============================================================================================================
+2) Write a script to create “cricket.xml” file with multiple elements as given 
+below <Cricket team> <Country = India> 
+<Player Name >-------- <Player Name > 
+ <Wickets>--------- </Wickets> <Runs>------ --</Runs> 
+</Country> 
+</Cricket team> 
+Also add country = “England” and its element
+:--------------------------
+
+
+===============================================================================================================
