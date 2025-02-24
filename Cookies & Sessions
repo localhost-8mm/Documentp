@@ -11,7 +11,19 @@ expire his session and give a warning.
 Q:2) Write a script to keep track of number of times the web page has been 
 accessed. 
  :-----------------------------
-
+<?php
+//session start
+session_start();
+if(isset($_SESSION['count']))
+{
+$_SESSION['count'] = $_SESSION['count'] +1;
+}
+else
+{
+$_SESSION['count'] =1;
+}
+echo " No of times the web page has been access ".$_SESSION['count'];
+?>
 
 ====================================================================================================================================
  
@@ -21,6 +33,94 @@ Q:1) Change the preferences of your web page like font style, font size, font co
 background color using cookie. Display selected settings on next web page and 
 actual implementation (with new settings) on third web page. 
  :-----------------------------
+<html>
+
+<body>
+    <table border="1" align=center>
+        <form action="http://localhost/PHP/Practical/Web-Development/Assignment1/second.php">
+            <tr>
+                <td>
+                    <b>Select font style
+                </td>
+                <td>
+                    <input type="text" name="s1"><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>Enter font size
+                </td>
+                <td>
+                    <input type="text" name="s"><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>Enter font colour
+                </td>
+                <td>
+                    <input type="text" name="c"><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+
+                    <b>Enter Background Colour
+                </td>
+                <td>
+                    <input type="text" name="b"><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="next">
+                </td>
+            </tr>
+
+        </form>
+    </table>
+</body>
+
+</html>
+
+Second.php
+
+<?php
+ob_start();
+echo "Style is : ".$_GET['s1']."<br>";
+echo "Size is : ".$_GET['s']."<br>";
+echo "Color is : ".$_GET['c']."<br>";
+echo "Background color is : ".$_GET['b']."<br>";
+setcookie("set1",$_GET['s1']);
+setcookie("set2",$_GET['s']);
+setcookie("set3",$_GET['c']);
+setcookie("set4",$_GET['b']);
+?>
+
+<html>
+<body>
+<form action = "http://localhost/PHP/Practical/Web-Development/Assignment1/third.php">
+<input type="submit" value="OK" value="submit">
+</form>
+</body>
+</html>
+
+third.php
+
+<?php
+$fstyle =$_COOKIE['set1'];
+$fsize=$_COOKIE['set2'];
+$fcolor=$_COOKIE['set3'];
+$background=$_COOKIE['set4'];
+
+$name = "Shubham";
+echo "<body bgcolor =$background >";
+echo "<font color=$fcolor size=$fsize style=$fstyle > $name";
+?>
 
 
 ====================================================================================================================================
@@ -51,6 +151,193 @@ form. Bill should contain the customer information and the information of the
 products entered. 
  :-----------------------------
 
+C1Cust.html
+
+<html>
+  <body>
+    <style>
+      table,
+      tr,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      tr,
+      td {
+        padding: 10px;
+      }
+      table.center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .btn {
+        border: 2px solid black;
+        background-color: white;
+        color: black;
+        padding: 8px 16px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .success:hover {
+        background-color: #04aa6d;
+        color: white;
+      }
+      .orange:hover {
+        background: #f44336;
+        color: white;
+      }
+    </style>
+    <form action="http://localhost/PHP/Practical/Web-Development/Assignment1/C1Cust.php">
+      <table class="center" style="background-color: powderblue">
+        <tr>
+          <td>Enter Customer Name :</td>
+          <td>
+            <input type="text" name="name" required />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Enter Customer Address :</td>
+          <td>
+            <input type="text" name="add" required />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Enter Mobile Number:</td>
+          <td>
+            <input type="text" name="num" required />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input type="submit" name="submit" value="submit" class="btn orange" />
+          </td>
+        </tr>
+        
+      </table>
+    </form>
+  </body>
+</html>
+
+C1Cust.php
+
+<?php
+session_start();
+$_SESSION['cname']=$_GET['name'];
+$_SESSION['cadd']=$_GET['add'];
+$_SESSION['cno']=$_GET['num'];
+?>
+
+<html>
+<body >       
+        <style>
+        table,tr,td{
+        border :1px solid black ;
+        border-collapse : collapse;
+        }
+        tr,td{
+        padding : 10px;
+        }
+        table.center{
+        margin-left:auto;
+        margin-right:auto;
+        }
+        .btn{
+        border :2px solid black ;
+        background-color:white;
+        color:black;
+        padding: 8px 16px;
+        font-size:16px;
+        cursor:pointer;
+        border-radius:5px;
+        }
+        .success:hover{
+        background-color:#04AA6D;
+        color:white;
+        }
+        .orange:hover{
+        background:#f44336;
+        color:white;
+        }
+        </style>
+<form action = "http://localhost/PHP/Practical/Web-Development/Assignment1/C1.php">
+    <table class="center"    style = "background-color:powderblue"  >
+<caption>Product Information</caption>
+    <tr>
+        <td>
+        Enter Product Name:
+        </td>
+        <td>
+        <input type="text" name="pname"   required>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+        Enter Quantity:
+        </td>
+        <td>
+        <input type="text" name="q"   required>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+        Enter Rate :
+        </td>
+        <td>
+        <input type="text" name="rate"   required>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+        </td>
+        <td>
+        <input type=submit name="submit" value="submit" class="btn orange" >
+        </td>
+        </tr>
+    </table>
+    </form>
+    </body>
+
+</html>
+
+
+
+C1.php
+
+<?php
+session_start();
+$_SESSION['pname']=$_GET['pname'];
+$_SESSION['pqty']=$_GET['q'];
+$_SESSION['prate']=$_GET['rate'];
+
+$name = $_SESSION['cname'];
+$address = $_SESSION['cadd'];
+$number = $_SESSION['cno'];
+$product =$_SESSION['pname'];
+$quantity = $_SESSION['pqty'];
+$rate =$_SESSION['prate'];
+
+echo "Bill Details"."<br>";
+
+echo "Customer Name : ".$name."<br>";
+echo "Customer Address : ".$address."<br>";
+echo "Customer Number : ".$number."<br>";
+echo "Product Name : ".$product."<br>";
+echo "Product Quantity : ".$quantity."<br>";
+echo "Product Rate : ".$rate."<br>";
+
+$total = $quantity*$rate;
+
+echo "Total : ".$total."<br>";
+?>
+
+
 
 ====================================================================================================================================
  
@@ -59,6 +346,140 @@ chances, username and password entered is correct, then display second
 form, otherwise display error message. 
 :-----------------------------
 
+B1.html
+
+<html>
+<body>
+<form action = "http://localhost/PHP/Practical/Web-Development/Assignment1/B1.php">
+    <table class="center"    style = "background-color:powderblue"  >
+        <tr>
+        <td>
+        Enter User Name :
+        </td>
+        <td>
+        <input type="text" name="user"   required>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+        Enter Password:
+        </td>
+        <td>
+        <input type="password" name="pass" required>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+        <input type="submit" name="submit" value="submit" class="btn orange" >
+        </td>
+        </tr>
+    </table>
+    </form>
+    </body>
+
+</html>
+
+
+
+B1.php
+
+<?php
+//session start
+
+session_start();
+$u=$_GET['user'];
+$p=$_GET['pass'];
+
+if(isset($_SESSION['count']))
+{
+    $_SESSION['count'] = $_SESSION['count'] +1;   
+}
+
+else
+    {
+        $_SESSION['count'] =1;
+    }
+
+
+if($_SESSION['count']<=3 && $u="shubham" && $p="great")
+        {
+             echo "Welcome Man";
+        }
+    else
+        {
+            echo "Errors";
+        }
+?>
 
 ====================================================================================================================================
- 
+ 2. Write a PHP script to accept Employee details (Eno, Ename, Address) on first page. On second page  accept earning (Basic, DA, HRA).
+On third page print Employee information (Eno, Ename, Address, Basic, DA, HRA, Total) [ Use Session]
+:---------------------
+B1.html
+
+<html>
+<body>
+<form action = "http://localhost/PHP/Practical/Web-Development/Assignment1/B1.php">
+    <table class="center"    style = "background-color:powderblue"  >
+        <tr>
+        <td>
+        Enter User Name :
+        </td>
+        <td>
+        <input type="text" name="user"   required>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+        Enter Password:
+        </td>
+        <td>
+        <input type="password" name="pass" required>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+        <input type="submit" name="submit" value="submit" class="btn orange" >
+        </td>
+        </tr>
+    </table>
+    </form>
+    </body>
+
+</html>
+
+
+
+B1.php
+
+<?php
+//session start
+
+session_start();
+$u=$_GET['user'];
+$p=$_GET['pass'];
+
+if(isset($_SESSION['count']))
+{
+    $_SESSION['count'] = $_SESSION['count'] +1;   
+}
+
+else
+    {
+        $_SESSION['count'] =1;
+    }
+
+
+if($_SESSION['count']<=3 && $u="shubham" && $p="great")
+        {
+             echo "Welcome Man";
+        }
+    else
+        {
+            echo "Errors";
+        }
+?>
