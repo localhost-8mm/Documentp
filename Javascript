@@ -14,6 +14,62 @@ use Event ‘Onload’).
 SET B: 
 1) Write a javascript function to validate username and password for a membership form. 
 :-------------------
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      Enter Username : <input type="text" name="user" id="u" /><br />
+      Enter Password : <input type="password" name="pass" id="p" /><br />
+      <input type="button" value="submit" onclick="check()" />
+    </center>
+
+    <script>
+      function check() {
+        var i;
+        flag = false;
+        var us = document.getElementById("u").value;
+        var ps = document.getElementById("p").value;
+        if (
+          us.length >= 6 &&
+          us.length <= 15 &&
+          ps.length >= 6 &&
+          ps.length <= 15
+        ) {
+          for (var i = 0; i < (us.length || ps.length); i++) {
+            if (
+              (us.charAt(i) >= "a" && us.charAt(i) <= "z") ||
+              (us.charAt(i) >= "A" && us.charAt(i) <= "Z") ||
+              (us.charAt(i) >= "0" && us.charAt(i) <= "9")
+            ) {
+              if (
+                (ps.charAt(i) >= "a" && ps.charAt(i) <= "z") ||
+                (ps.charAt(i) >= "A" && ps.charAt(i) <= "Z") ||
+                (ps.charAt(i) >= "0" && ps.charAt(i) <= "9") ||
+                ps.charAt == "@" ||
+                ps.charAt == "#" ||
+                ps.charAt == "$"
+              ) {
+                flag = true;
+              } else flag = false;
+            }
+          }
+          if (flag == true) {
+            alert("Login Succesfully");
+          } else {
+            alert("Invalid Username and Password");
+          }
+        } else alert("Invalid due to Length");
+      }
+    </script>
+  </body>
+</html>
+
 
 
 ================================================================================================================
@@ -35,6 +91,151 @@ font size to 18 if student name is present otherwise on clicking on empty text b
 display image which change its size (Use onblur, onload, onmousehover, 
 onmouseclick, onmouseup)
 :-------------------
+<html>
+  <head>
+    <script type="text/javascript"></script>
+    <script>
+      function change() {
+        var cnt = 0;
+        var name1 = document.getElementById("n").value;
 
+        if (name1 != "") {
+          document.getElementById("n").style.color = "blue";
+          document.getElementById("n").style.fontSize = "18px";
+        } else {
+          var img = new Image();
+
+          var div = document.getElementById("d");
+
+          img.onload = function imag() {
+            div.appendChild(img);
+          };
+          img.src = "Pune.jpg";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <h4>OnClick</h4>
+    <br />
+    Enter Name <input type="text" name="name" id="n" onclick="change()" />
+
+    <!--     
+<h4>OnBlur</h4><br>
+Enter Name <input type = "text" name = "name" id = "n" onblur="change()"><br> -->
+
+    <!-- <h4>OnMouseOver</h4><br>
+Enter Name <input type = "text" name = "name" id = "n" onmouseover="change()"> -->
+
+    <!-- <h4>OnMouseUp</h4>
+    <br />
+    Enter Name <input type="text" name="name" id="n" onmouseup="change()" /> -->
+
+    <!--
+Enter Name <input type = "text" name = "name" id = "n" onload="change()">
+-->
+
+    <div id="d"></div>
+  </body>
+</html>
+
+ 2) Remove div section elements after clicking on button using jQuery.
+[Hint : Use #id selector] 
+
+Solution:-
+
+<html>
+  <head>
+    <!-- Internet is required for the jquery effect -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $("#btn1").click(function () {
+          $("div").remove();
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1>Demo : JQuery Remove() Method</h1>
+    <div>
+      <h1>Demo : JQueryremove() Method</h1>
+    </div>
+
+    <button id="btn1">Remove</button>
+  </body>
+</html>
 
 ================================================================================================================
+=================================================================================================================
+) Write a javascript to display message ‘Exams are near, have you started preparing for?’ using alert, prompt and confirm boxes. Accept proper input from user and display messages accordingly.
+
+Solution:-
+
+<html>
+  <body>
+    <h1>javascript Promt</h1>
+    <button onclick="fun()">Click Me</button>
+    <script>
+      function fun() {
+        var stud = prompt("Exams are near,have you started preparing for ?");
+        
+        if (stud == "No" || stud == "no" || stud == "NO") {
+          alert("Start Preparing");
+          confirm("Preparing for study");
+        }
+        if (stud == "Yes" || stud == "yes" || stud == "YES") {
+          alert("Good");
+          confirm("Finish your study");
+        }
+      }
+    </script>
+  </body>
+</html>
+
+=========================================
+2) To insert text before and after an image using jQuery.
+[Hint : Use before( ) and after( )]
+
+Solution:-
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Internet is required for the jquery effect -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<hr>
+    <script>
+        $(document).ready(function () {
+            $("#ib").click(function () {
+                $("h1").before('<img src = "Pune.jpg" alt = "Img not found" height = "200px">')
+            });
+            $("#ia").click(function () {
+                $("h1").after('<img src = "Pune.jpg" alt = "Img not found" height = "200px">')
+            });
+        });
+    </script>
+
+    <h1>Show Image</h1>
+    <hr>
+<button type="button" id="ib"> Insert Before </button>
+<button type="button" id="ia"> Insert After </button>    
+<hr>
+
+</body>
+
+</html>
+==========================================
