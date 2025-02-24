@@ -30,11 +30,165 @@ Set C :
 a textbox. (eg like google suggestions. Hint create array of 
 suggestions and matching string will be displayed ) 
   :--------------------------
+<html>
+
+<head>
+
+<script type="text/javascript">
+
+function suggest()
+
+{
+
+ var arr = ["apple","banana","mango","orange","strawberry","grapes"];
+
+ var suggest = "";
+
+ var input = document.getElementById("txt1").value;
+
+ for(i=0;i<arr.length;i++)
+
+ {
+
+ if(arr[i].substring(0,input.length).toLowerCase() == input.toLowerCase())
+
+ {
+
+ suggest = suggest+" "+arr[i];
+
+ }
+
+ }
+
+ document.getElementById("txt2").innerHTML = suggest;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<input type="text" id="txt1" onkeyup="suggest();">
+
+<p>Suggestions: <span id="txt2"></span></p>
+
+</body>
+
+</html>
 
 =====================================================================================================================
 2) Write Ajax program to get book details from XML file when user 
 select a book name. Create XML file for storing details of 
 book(title, author, year, price).
  :--------------------------
+BookInfo.xml
+
+ <?xml version="1.0" encoding="utf-8"?>
+
+ <BookList>
+
+ <Book>
+
+ <Title>The Great Gatsby</Title>
+
+ <Author>F. Scott Fitzgerald</Author>
+
+ <Year>1925</Year>
+
+ <Price>$7.99</Price>
+
+ </Book>
+
+ <Book>
+
+ <Title>To Kill a Mockingbird</Title>
+
+ <Author>Harper Lee</Author>
+
+ <Year>1960</Year>
+
+ <Price>$8.99</Price>
+
+ </Book>
+
+ <Book>
+
+ <Title>The Catcher in the Rye</Title>
+
+ <Author>J.D. Salinger</Author>
+
+ <Year>1951</Year>
+
+ <Price>$9.99</Price>
+
+ </Book>
+
+ </BookList>
+
+Html file :
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <title>Document</title>
+
+</head>
+
+<body>
+
+ <script>
+
+ function getBookDetails(bookName) {
+
+ var xhttp = new XMLHttpRequest();
+
+ xhttp.onreadystatechange = function() {
+
+ if (this.readyState == 4 && this.status == 200) {
+
+ var xmlDoc = this.responseXML;
+
+ var book = xmlDoc.getElementsByTagName("Book");
+
+ for (var i = 0; i < book.length; i++) {
+
+ if (book[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue == bookName) {
+
+ alert("Author: " + book[i].getElementsByTagName("Author")[0].childNodes[0].nodeValue + "\n"
+
++
+
+ "Year: " + book[i].getElementsByTagName("Year")[0].childNodes[0].nodeValue + "\n" +
+
+ "Price: " + book[i].getElementsByTagName("Price")[0].childNodes[0].nodeValue);
+
+ }
+
+ }
+
+ }
+
+ };
+
+ xhttp.open("GET", "BookInfo.xml", true);
+
+ xhttp.send();
+
+ }
+
+ // Call the getBookDetails function
+
+ getBookDetails("The Catcher in the Rye");
+
+ </script>
+
+</body>
+
+</html>
 
 =====================================================================================================================
