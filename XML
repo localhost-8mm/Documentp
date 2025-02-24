@@ -21,7 +21,7 @@ Store the details of 5 students who are in TYBSc.
 <ComputerScience>
 <StudentName>Bob</StudentName>
 <ClassName>TYBSc</ClassName>
-<Percentage>78</Percentage>
+<Percentage>78</Percentage>  
 </ComputerScience>
 
 <ComputerScience>
